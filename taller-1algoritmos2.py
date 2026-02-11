@@ -1,13 +1,15 @@
+# se crean dos listas las cuales van a almacenar datos los cuales pueden ser modificados
 notas = [1.6,3.5,2.5,4.0,5.0]
 notas2 = []
 
+# se imprime en la terminal las notas que estan guardadas para que el usuario pueda verlas
 def ver_notas(notas):
     print("Mostrando notas...")
     for i,nota in enumerate(notas):
         
-        print(f"Estudiante: {i} {nota}")
+        print(f"Estudiante: {i}.)  {nota}")
 
-
+# toda esta parte permite administrar las notas, permite guardar, ver, modificar y analizar las notas
 def modificar_notas(notas):
     menu = int(input("""Menu
                 
@@ -17,7 +19,7 @@ def modificar_notas(notas):
     match menu:
         case 1:
             for i, nota in enumerate(notas):
-                print(f"Estudiante: {i} {nota}")
+                print(f"Estudiante: {i}.)  {nota}")
             indice = int(input("ingrese el numero del estudiante que quiere modificar"))
     #asi se asegura de que no ponga un indice que no existe y len me dice cuantos elementos hay(indice y numero de elementos son diferentes)
             if 0 <= indice and indice <len(notas):
@@ -42,9 +44,9 @@ def modificar_notas(notas):
                     print("Nota no valida")
             print("Lista modificada:")        
             for i, nota in enumerate(notas):
-                print(f"Estudiante: {i} {nota} ")#muestra la lista modificada
+                print(f"Estudiante: {i}.)  {nota} ")#muestra la lista modificada
 
-
+#esta parte sirve para analizar las notas y sacar el resumen general
 def resumen_notas(notas):
     aprobados = 0
     reprobados = 0
@@ -76,7 +78,7 @@ def resumen_notas(notas):
             Porcentaje de reprobados: {porcentaje_reprob}  """)
     
 
-
+# esta parte para crear una nueva lista de notas ingresadas por el usuario
 def crear_lista():
         notas2 = []
 
@@ -97,7 +99,7 @@ def crear_lista():
 
 
 
-
+#este es el menu que muestra el programa, el cual me da las notas y dependiendo del numero que se elija asi mismo se modifica o da un resultado la lista
 play = True
 while play == True:
 
@@ -126,5 +128,7 @@ while play == True:
             resumen_notas(notas)
 
         case 4:
-            notas = crear_lista()
+            notas = crear_lista()#aqui todo lo echo en la funcion se guarda en notas
 
+        case 5:
+            break
